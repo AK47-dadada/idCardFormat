@@ -2,7 +2,7 @@
 
 ```bash
 # 安装项目
-npm install idcardformat area-data
+npm install idcard-format area-data
 ```
 
 ```javascript

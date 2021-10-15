@@ -102,7 +102,7 @@ class IdCardFormat {
    * @returns {Object}
    */
   getBirthday(idCard) {
-    const birthday = this.getSpecifiedCode([6, 14])
+    const birthday = this.getSpecifiedCode([6, 14], idCard)
     return {
       birthday: birthday.replace(/(.{4})(.{2})/, '$1-$2-')
     }

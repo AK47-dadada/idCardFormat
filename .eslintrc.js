@@ -20,12 +20,17 @@ module.exports = {
         'capIsNew': false,
       },
     ],
-    'max-len': ['error',
-      {'code': 160, 'tabWidth': 2,
+    'max-len': [
+      'error',
+      {
+        'code': 160,
+        'tabWidth': 2,
       },
     ],
-    'no-invalid-this': ['error',
-      {'capIsConstructor': true,
+    'no-invalid-this': [
+      'error',
+      {
+        'capIsConstructor': true,
       },
     ],
   },

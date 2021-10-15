@@ -161,4 +161,8 @@ class IdCardFormat {
   }
 }
 
-module.exports = IdCardFormat
+if (module) {
+  module.exports = IdCardFormat
+}
+
+export default IdCardFormat

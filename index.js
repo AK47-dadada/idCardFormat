@@ -1,3 +1,3 @@
-import IdCardFormat from './src/idCardFormat'
+import IdCardFormat from './src/idCardFormat';
 
-export default IdCardFormat
+export default IdCardFormat;

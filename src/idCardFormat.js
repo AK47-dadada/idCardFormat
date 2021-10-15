@@ -24,7 +24,7 @@ class IdCardFormat {
    * 获取指定的身份证编码片段
    * @returns {String}
    */
-  #getSpecifiedCode(specified, idCard) {
+  getSpecifiedCode(specified, idCard) {
     const idCardNo = idCard || this.idCardNo
     // 如果校验不通过则返回空
     return this.idCardValidator(idCardNo) ? idCardNo.slice(...specified) : null
@@ -35,7 +35,7 @@ class IdCardFormat {
    * @returns {String}
    */
   getProvinceCode(idCard) {
-    return this.#getSpecifiedCode([0, 2], idCard)
+    return this.getSpecifiedCode([0, 2], idCard)
   }
 
   /**
@@ -43,7 +43,7 @@ class IdCardFormat {
    * @returns {String}
    */
   getCityCode(idCard) {
-    return this.#getSpecifiedCode([2, 4], idCard)
+    return this.getSpecifiedCode([2, 4], idCard)
   }
 
   /**
@@ -51,7 +51,7 @@ class IdCardFormat {
     * @returns {String}
    */
   getCountyCode(idCard) {
-    return this.#getSpecifiedCode([4, 6], idCard)
+    return this.getSpecifiedCode([4, 6], idCard)
   }
 
   /**
@@ -102,7 +102,7 @@ class IdCardFormat {
    * @returns {Object}
    */
   getBirthday(idCard) {
-    const birthday = this.#getSpecifiedCode([6, 14])
+    const birthday = this.getSpecifiedCode([6, 14])
     return {
       birthday: birthday.replace(/(.{4})(.{2})/, '$1-$2-')
     }
@@ -113,7 +113,7 @@ class IdCardFormat {
    * @returns {Object}
    */
   getAge(idCard) {
-    const birthday = this.#getSpecifiedCode([6, 14], idCard)
+    const birthday = this.getSpecifiedCode([6, 14], idCard)
     const d = new Date()
     const y = d.getFullYear()
     const m = (d.getMonth() + 1 + '').padStart(2, '0')
@@ -130,7 +130,7 @@ class IdCardFormat {
    * @returns {Object}
    */
   getGender(idCard) {
-    const code = this.#getSpecifiedCode([-2, 17], idCard)
+    const code = this.getSpecifiedCode([-2, 17], idCard)
     // 奇数为男 偶数为女
     const isOdd = code % 2 === 1
     // 0 男 1 女
